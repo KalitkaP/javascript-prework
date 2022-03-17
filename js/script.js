@@ -1,66 +1,56 @@
-var playerMove, playerInput;
+function printMessage(msg){
+	var div = document.createElement('div');
+	div.innerHTML = msg;
+	document.getElementById('messages').appendChild(div);
+}
 
-playerInput = prompt(
-  "Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce."
-);
+function clearMessages(){
+	document.getElementById('messages').innerHTML = '';
+}
 
-if (playerInput == "1") {
-    playerMove = "kamień";
-    console.log('Twój ruch: ' + playerMove);
-  }
-else if (playerInput == "2") {
-    playerMove = "papier";
-    console.log('Twój ruch: ' + playerMove);
-  }
-else if (playerInput == "3") {
-    playerMove = "nożyce";
-    console.log('Twój ruch: ' + playerMove);
-} else {
-    playerMove = "nieznany ruch";
-    console.log('Nie ma takiej opcji')
+var argMoveId, argPlayerMove, argComputerMove, computerMove, playerMove, randomNumber, playerInput;
+
+function getMoveName(argMoveId){
+    if(argMoveId == 1){
+      return 'kamień';
+    } 
+    else if(argMoveId == 2){
+        return 'papier';
     }
-
-  printMessage('Gracz wybrał - ' + playerMove);
-
-   
-   var computerMove, randomNumber;
-
-      randomNumber = Math.floor(Math.random() * 3 + 1);
-      
-      if (randomNumber == "1") {
-        computerMove = "kamień";
-        console.log("Komputer wybrał: " + computerMove);
-      }
-      else if (randomNumber == "2") {
-        computerMove = "papier";
-        console.log("Komputer wybrał: " + computerMove);
-      }
-      else if (randomNumber == "3") {
-        computerMove = "nożyce";
-        console.log("Komputer wybrał - " + computerMove);
-      }
-      printMessage('Komputer wybrał - ' + computerMove);
-    
-       
-
-
-    
-    if ( playerMove == 'kamień' && computerMove == 'papier') {
-        console.log('Komputer wygrywa');
+    else if(argMoveId == 3){
+        return 'nożyce';
     }
-    else if (playerMove == 'papier' &&  computerMove == 'nożyce') {
-        console.log('Komputer wygrywa');
-    }
-    else if (playerMove == 'nożyce' &&  computerMove == 'kamień') {
-        console.log('Komputer wygrywa');
-    }
-    else if (playerMove == computerMove ) {
-        console.log('Remis'); 
-    }
-    else if (playerMove == "nieznany ruch" ) {
-        console.log('Nie ma takiej opcji'); 
-    }
-   
     else {
-        console.log('Gracz wygrywa');
+      printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
+      return 'kamień';
     }
+  }
+
+  function displayResult(argPlayerMove, argComputerMove) {
+  
+    if (argPlayerMove == 'papier' && argComputerMove == 'kamień') {
+      printMessage('Wygrywasz!'); 
+    }
+    else if (argPlayerMove == 'kamień' && argComputerMove == 'nożyce') {
+        printMessage('Wygrywasz!'); 
+    }
+    else if (argPlayerMove == 'nożyce' && argComputerMove == 'papier') {
+        printMessage('Wygrywasz!'); 
+     }
+     else if (argComputerMove == argPlayerMove) {
+        printMessage('Remis');
+     }
+    else {
+      printMessage('Przegrywasz :(');
+    }
+    printMessage('komputer wybrał ' + argComputerMove + ', gracz wybrał ' + argPlayerMove);
+  }
+
+
+  playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+  playerMove = getMoveName(playerInput);
+  console.log('ruch gracza to: ' + playerMove);
+  randomNumber = Math.floor(Math.random() * 3 + 1);
+  computerMove = getMoveName(randomNumber);
+  console.log('ruch komputera to: ' + computerMove);
+  displayResult(playerMove, computerMove);

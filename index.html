@@ -6,17 +6,39 @@
     <meta name="viewport" content="width=1, initial-scale=1.0" />
     <link rel="stylesheet" href="vendor/bootstrap-grid.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Kamień, papier, nożyce</title>
+    <title>Gra papier, kamień, nożyczki</title>
   </head>
+
   <body>
+    <header>
+      <h1>Gra kamień, papier, nożyce</h1>
+      <button id="start">START</button>
+      <button id="stop">KONIEC</button>
+    </header>
     <div class="container">
-      <div id="buttons">
-        <button id="button-rock">Kamień</button>
-        <button id="button-paper">Papier</button>
-        <button id="button-scissors">Nożyce</button>
+      <div class="row">
+        <div class="card card-message col-12">
+          <div id="messages"></div>
+        </div>
+        <div class="card col-12">
+          <div class="row">
+            <div class="col-4">
+              <h2 class="gamer">Gracz</h2>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4">
+              <h2 class="comp">Komputer</h2>
+            </div>
+          </div>
+        </div>
+        <div id="buttons" class="card three col-12">
+          <button id="button-rock">Kamień</button>
+          <button id="button-paper">Papier</button>
+          <button id="button-scissors">Nożyce</button>
+        </div>
       </div>
-      <div id="messages"></div>
     </div>
+
     <script src="js/functions.js"></script>
     <script src="js/script.js"></script>
   </body>

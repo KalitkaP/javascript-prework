@@ -1,0 +1,76 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    text-align: center;
+    color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #271c1c;
+  }
+
+  .container {
+    max-width: 80vw;
+    min-height: 80vh;
+  }
+
+  .row {
+      display: flex;
+      flex-direction: row;
+  }
+    .card-message {
+        font-size: 26px;
+        padding-top: 30px;
+  }
+
+  .col-4 {
+      min-height: 150px;
+      padding: 0;
+      /* border: 1px solid red; */
+
+  }
+
+  .card  {
+      min-height: 150px;
+      /* border: 1px solid red; */
+  }
+
+  button {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: black;
+    color: blue;
+    font-size: 14px;
+    font-family: arial;
+    box-sizing: border-box;
+    width: 100px;
+    margin: 0 20px;
+    padding: 10px ;
+    text-align: center;
+    border: 2px solid blue;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 25px;
+  }
+
+  button:hover {
+    background-color: #333;
+    border: 2px solid red;
+    color: white;
+  }
+
+  .gamer {
+      text-align: left;
+  }
+  .comp {
+    text-align: right;
+}
+
+.three {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
+}

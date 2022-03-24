@@ -1,9 +1,9 @@
-var btnRock, btnPaper, btnScissors, argButtonName, btnStart;
 
-      btnRock = document.getElementById("rock");
-      btnPaper = document.getElementById("paper");
-      btnScissors = document.getElementById("scissors");
-      btnStart = document.getElementById("start");
+
+      const btnRock = document.getElementById("rock");
+      const btnPaper = document.getElementById("paper");
+      const btnScissors = document.getElementById("scissors");
+      const btnStart = document.getElementById("start");
 
       var argComputerMove,
         argPlayerMove,
@@ -12,9 +12,6 @@ var btnRock, btnPaper, btnScissors, argButtonName, btnStart;
         playerMove,
         playerInput,
         getMove;
-
-        
-       
 
       function buttonClicked(argButtonName) {
         clearMessages();
@@ -30,7 +27,6 @@ var btnRock, btnPaper, btnScissors, argButtonName, btnStart;
           }
         }
         
-       
 
         function resultDisplay(argPlayerMove, argComputerMove) {
          

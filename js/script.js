@@ -1,8 +1,5 @@
 
-      var argComputerMove,
-        argPlayerMove, 
-        playerInput,
-        getMove;
+
 
       function buttonClicked(argButtonName) {
         clearMessages();

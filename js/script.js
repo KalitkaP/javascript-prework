@@ -1,15 +1,6 @@
 
-
-      const btnRock = document.getElementById("rock");
-      const btnPaper = document.getElementById("paper");
-      const btnScissors = document.getElementById("scissors");
-      const btnStart = document.getElementById("start");
-
       var argComputerMove,
-        argPlayerMove,
-        computerMove,
-        randomNumber,
-        playerMove,
+        argPlayerMove, 
         playerInput,
         getMove;
 
@@ -47,18 +38,26 @@
           }
         }
 
-        playerMove = argButtonName;
+        const playerMove = argButtonName;
         printMessage("Gracz wybrał " + argButtonName);
         console.log("Gracz wybrał " + argButtonName);
-        randomNumber = Math.floor(Math.random() * 3 + 1);
-        computerMove = value(randomNumber);
+
+        const randomNumber = Math.floor(Math.random() * 3 + 1);
+        const computerMove = value(randomNumber);
         console.log("Komputer wybrał: " + computerMove);
         printMessage("Komputer wybrał: " + computerMove);
-        var result= resultDisplay(playerMove, computerMove);
+
+        const result= resultDisplay(playerMove, computerMove);
         console.log(result);
         printMessage(result);
       
       }
+
+
+      const btnRock = document.getElementById("rock");
+      const btnPaper = document.getElementById("paper");
+      const btnScissors = document.getElementById("scissors");
+      const btnStart = document.getElementById("start");
 
       btnRock.addEventListener("click", function () {
         buttonClicked("kamień");

@@ -5,12 +5,12 @@
         clearMessages();
         
 
-        function value(getMove) {
-          if (getMove == "1") {
+        function getMoveName(argMoveId) {
+          if (argMoveId == "1") {
             return "kamień";
-          } else if (getMove == "2") {
+          } else if (argMoveId == "2") {
             return "papier";
-          } else if (getMove == "3") {
+          } else if (argMoveId == "3") {
             return "nożyce";
           }
         }
@@ -31,16 +31,16 @@
             return "Remis";
           } else {
             return "Przegrywasz";
-           
           }
         }
+      
 
         const playerMove = argButtonName;
         printMessage("Gracz wybrał " + argButtonName);
         console.log("Gracz wybrał " + argButtonName);
 
         const randomNumber = Math.floor(Math.random() * 3 + 1);
-        const computerMove = value(randomNumber);
+        const computerMove = getMoveName(randomNumber);
         console.log("Komputer wybrał: " + computerMove);
         printMessage("Komputer wybrał: " + computerMove);
 

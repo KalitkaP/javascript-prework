@@ -1,5 +1,6 @@
 
-
+  let playerScore = 0;
+  let gameScore = 0;
 
       function buttonClicked(argButtonName) {
         clearMessages();
@@ -19,18 +20,27 @@
         function resultDisplay(argPlayerMove, argComputerMove) {
          
           if (argPlayerMove == "kamień" && argComputerMove == "nożyce") {
-            return "Wygrywasz";
+            playerScore++;
+            console.log(playerScore)
+            printMessage("Wygrywasz");
+            valuePlayer.textContent=playerScore;
             
           } else if (argPlayerMove == "papier" && argComputerMove == "kamień"){
-            return "Wygrywasz";
+            playerScore++;
+            printMessage("Wygrywasz");
+            valuePlayer.textContent=playerScore;
            
           } else if (argPlayerMove == "nożyce" && argComputerMove == "papier") {
-            return "Wygrywasz";
+            playerScore++;
+            printMessage("Wygrywasz");
+            valuePlayer.textContent=playerScore;
             
           } else if (argPlayerMove == argComputerMove) {
-            return "Remis";
+            printMessage("Remis");
           } else {
-            return "Przegrywasz";
+            gameScore++;
+            printMessage("Przegrywasz");
+            valueComputer.textContent=gameScore;
           }
         }
       
@@ -43,10 +53,7 @@
         const computerMove = getMoveName(randomNumber);
         console.log("Komputer wybrał: " + computerMove);
         printMessage("Komputer wybrał: " + computerMove);
-
-        const result= resultDisplay(playerMove, computerMove);
-        console.log(result);
-        printMessage(result);
+        resultDisplay(playerMove, computerMove);
       
       }
 
@@ -55,6 +62,8 @@
       const btnPaper = document.getElementById("paper");
       const btnScissors = document.getElementById("scissors");
       const btnStart = document.getElementById("start");
+      const valuePlayer = document.getElementById("player-score");
+      const valueComputer = document.getElementById("computer-score");
 
       btnRock.addEventListener("click", function () {
         buttonClicked("kamień");

@@ -27,13 +27,23 @@ body {
   .col-4 {
       min-height: 150px;
       padding: 0;
-      /* border: 1px solid red; */
+  }
 
+  span {
+    padding: 10px;
+    color: red;
+    font-size:40px;
+    font-weight: bold;
+  }
+
+  .sign{
+    font-weight: bold;
+    color: white;
   }
 
   .card  {
       min-height: 150px;
-      /* border: 1px solid red; */
+     
   }
 
   button {
@@ -74,3 +84,6 @@ body {
     justify-content: center;
     align-items:  center;
 }
+
+
+
